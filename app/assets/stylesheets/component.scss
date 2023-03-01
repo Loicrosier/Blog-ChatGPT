@@ -1,0 +1,111 @@
+.container {
+  height: 1200px;
+}
+
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.inline {
+  flex-direction: inline;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+// PUB
+.ads {
+  color: #CCCCCC;
+  height: 100px;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.ads:before {
+  content: 'Publicité AdSense';
+  display: block;
+  font-size: 24px;
+}
+
+// PARTIE CATEGORY
+
+#title-categories {
+  margin-top: 200px;
+  text-align: center;
+  font-family: 'Roboto Condensed', sans-serif !important;
+  font-size: 30px;
+  color: #545658;
+}
+
+.cartes {
+  height: 200px;
+  padding: 10px;
+  // align-items: center;
+  // justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 10px;
+  background-color: #2c323b;
+
+}
+
+
+.carte {
+  background-color: aqua;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 0;
+  // height: 150px;
+}
+
+.carte-name {
+  text-align: center;
+
+  h2 {
+    color: rgb(9, 9, 9);
+    font-family: 'Nunito', sans-serif;
+
+  }
+}
+
+.carte-desc {
+  height: 80%;
+  background-color: red;
+  gap: 5px;
+
+}
+
+.link-sous-cat {
+  background-color: #2c323b;
+
+  a {
+    text-decoration: none !important;
+  }
+}
+
+/// PARTIE POST ///
+
+.questions {
+  background-color: red;
+  height: 800px;
+  width: 50%;
+  position: relative;
+  left: 25%;
+  align-items: center;
+  gap: 10px;
+}
+
+.question {
+  background-color: yellow;
+  width: 50%;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+}

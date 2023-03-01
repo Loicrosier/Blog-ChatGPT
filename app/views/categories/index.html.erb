@@ -1,0 +1,21 @@
+<%# <% Category.attach_image %>
+<div class="container">
+  <div id="title-categories" ><h1>Catégories</h1></div>
+    <div class="cartes">
+      <% @categories.each do |category| %>
+        <%# <%= link_to categorie_path(category.id) do %>
+          <div class="carte flex column" style="background-image:url(<%= category.image%>)">
+            <div class="carte-name">
+              <h2><%= category.name %></h2>
+            </div>
+            <div class="carte-desc flex column">
+              <% category.sous_categories.each do |sous_category| %>
+                <div class="link-sous-cat"><%= link_to "#{sous_category.name}", sous_categories_path(sous_category.id) %></div>
+              <% end %>
+            </div>
+            <%# <p><%= description de la cate %>
+          </div>
+        <%# <% end %>
+      <% end %>
+    </div>
+</div>

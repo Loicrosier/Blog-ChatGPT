@@ -1,0 +1,5 @@
+    <% posts.each do |post| %>
+      <div class="question flex">
+        <%= link_to "#{post.name}", post_path(post.id) %>
+      </div>
+    <% end %>

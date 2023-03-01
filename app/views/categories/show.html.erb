@@ -1,0 +1,3 @@
+<% @sous_categories.each do |sous_category| %>
+  <%= link_to "#{sous_category.name}", sous_categories_path(sous_category.id) %>
+<% end %>

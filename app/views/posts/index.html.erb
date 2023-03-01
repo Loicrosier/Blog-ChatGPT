@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="questions flex column" data-controller="search-question" data-search-question-target="container">
+  <input type="text" data-search-question-target="input" data-action="keyup->search-question#test" data-search-question-url-param=<%=sous_categories_path(@sous_category.id)%>>
+
+
+
+      <%# <div class="question flex">
+        <%= link_to "#{post.name}", post_path(post.id) %>
+      <%# </div> %>
+        <%= render 'shared/question', posts: @posts %>
+
+  </div>
+</div>
