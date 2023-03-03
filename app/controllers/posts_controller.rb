@@ -3,14 +3,9 @@ class PostsController < ApplicationController
     @sous_category = SousCategory.find params[:sous_category_id]
     if params[:v].present?
        @posts = @sous_category.posts.where("name ILIKE ?", "%#{params[:v]}%")
-       p success
+      #  p success
     else
       @posts = @sous_category.posts
-    end
-
-    respond_to do |format|
-      format.html
-      format.json { render json: success, status: 200 }
     end
   end
 
@@ -21,13 +16,14 @@ class PostsController < ApplicationController
     @content = @post.content_with_good_format
   end
 
-  # private
+   private
 
-  def success
+   def success
     {
-      content: render_to_string(partial: "shared/question", formats: :html, locals: {posts: @posts })
+      content: render_to_string(partial: "shared/question", format: :html, locals: { posts: @posts })
     }
-  end
+   end
+
 end
 
 

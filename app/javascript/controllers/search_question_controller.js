@@ -10,19 +10,12 @@ export default class extends Controller {
   }
 
   test({params: { url }}) {
-    console.log(url);
     Rails.ajax({
       url: `${url}?v=${this.inputTarget.value}`,
       type: 'GET',
-      dataType: 'JSON',
-      // headers: { 'X-Requested-With': 'XMLHttpRequest' }, // Ajoute l'en-tête XHR
+      datatype: 'JSON',
       success: (data) => {
-        if (data) {
-          console.log(data.content);
-          // this.containerTarget.outerHTML = data.content
-          // do logic for insert question in di
-        }
-
+        console.log(data.content);
       }
     })
   }

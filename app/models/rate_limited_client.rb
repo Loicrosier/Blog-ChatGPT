@@ -33,7 +33,7 @@ class RateLimitedClient
       if response.code == '200'
         # Si la réponse est bonne, sortir de la boucle
         break
-      elsif response.code == '429'
+      elsif response.code == '429' || response.code == '503'
         # Si la réponse indique une limitation de taux d'appel, attendre et réessayer
         puts "Taux d'appel limité, attendez #{RATE_LIMIT_PERIOD} secondes ..."
         sleep(RATE_LIMIT_PERIOD)
