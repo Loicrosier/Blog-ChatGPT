@@ -1,12 +1,17 @@
 class PostsController < ApplicationController
   def index
     @sous_category = SousCategory.find params[:sous_category_id]
+    @posts = @sous_category.posts
+
     if params[:v].present?
-       @posts = @sous_category.posts.where("name ILIKE ?", "%#{params[:v]}%")
-      #  p success
-    else
-      @posts = @sous_category.posts
+      @posts = @posts.where('name ILIKE ?', "%#{params[:v]}%")
     end
+
+    respond_to do |format|
+      format.html #
+      format.json { render json: success, status: 200 }
+    end
+
   end
 
   def show

@@ -1,21 +1,21 @@
-<%# <% Category.attach_image %>
+
 <div class="container">
-  <div id="title-categories" ><h1>Catégories</h1></div>
-    <div class="cartes">
+<div class="main-box flex column" style="background-image: url('https://res.cloudinary.com/dtv4zvyjx/image/upload/v1677895812/forum%20with%20ChatGPT/background-khaoticfuture_lxevnd.gif')">
+    <h2 id="name-card-acceuil">CATEGORIES</h2>
+    <div class="categories flex column">
       <% @categories.each do |category| %>
-        <%# <%= link_to categorie_path(category.id) do %>
-          <div class="carte flex column" style="background-image:url(<%= category.image%>)">
-            <div class="carte-name">
-              <h2><%= category.name %></h2>
-            </div>
-            <div class="carte-desc flex column">
-              <% category.sous_categories.each do |sous_category| %>
-                <div class="link-sous-cat"><%= link_to "#{sous_category.name}", sous_categories_path(sous_category.id) %></div>
-              <% end %>
-            </div>
-            <%# <p><%= description de la cate %>
+        <div class="category-card flex" style="background-image: url('<%= cl_image_path category.image.key, height: 200, crop: :fill %>'); filter: brightness(110%) saturate(130%) hue-rotate(5deg);">
+          <h2 class='h2-category'><%= category.name.upcase! %></h2>
+          <div class="lists-sub-cat flex">
+            <% category.sous_categories.each do |sub_category| %>
+              <div class="sub-category-card flex">
+                <%= link_to "#{sub_category.name}", sous_categories_path(sub_category.id) %>
+              </div>
+            <% end %>
           </div>
-        <%# <% end %>
+        </div>
       <% end %>
     </div>
+  </div>
+
 </div>

@@ -1,19 +1,35 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
+require 'dotenv/load'
+    Cloudinary.config do |config|
+      config.cloud_name = ENV['CLOUDINARY_CLOUD_NAME']
+      config.api_key = ENV['CLOUDINARY_API_KEY']
+      config.api_secret = ENV['CLOUDINARY_API_SECRET']
+      config.secure = true
+    end
 
 p 'categories:'
+img_finance = URI.open('https://res.cloudinary.com/dtv4zvyjx/image/upload/v1677881298/forum%20with%20ChatGPT/money-idea-business-man-bulb-capital-1586313-pxhere.com_ct27zf.jpg')
+img_droit = URI.open('https://res.cloudinary.com/dtv4zvyjx/image/upload/v1677881298/forum%20with%20ChatGPT/4_copia_on35sd.png')
+img_tech = URI.open('https://res.cloudinary.com/dtv4zvyjx/image/upload/v1677890242/forum%20with%20ChatGPT/technologie_bx2bhp.jpg')
+img_sante = URI.open('https://res.cloudinary.com/dtv4zvyjx/image/upload/v1677881298/forum%20with%20ChatGPT/sant%C3%A9_humaine_m4udnr.png')
+img_voyage = URI.open('https://res.cloudinary.com/dtv4zvyjx/image/upload/v1677890242/forum%20with%20ChatGPT/voyages_oz9ult.jpg')
 
-Category.create(name: 'Finance')
-Category.create(name: 'Santé')
-Category.create(name: 'Technologie')
-Category.create(name: 'Voyages')
-Category.create(name: 'Droit')
+category_1 = Category.new(name: 'Finance')
+category_1.image.attach(io: img_finance, filename: 'image.jpg', content_type: "image/jpg")
+category_2 = Category.new(name: 'Santé')
+category_2.image.attach(io: img_sante, filename: 'image.jpg', content_type: "image/jpg")
+category_3 = Category.new(name: 'Technologie')
+category_3.image.attach(io: img_tech, filename: 'image.jpg', content_type: "image/jpg")
+category_4 = Category.new(name: 'Voyages')
+category_4.image.attach(io: img_voyage, filename: 'image.jpg', content_type: "image/jpg")
+category_5 = Category.new(name: 'Droit')
+category_5.image.attach(io: img_droit, filename: 'image.jpg', content_type: "image/jpg")
 
+category_1.save
+category_2.save
+category_3.save
+category_4.save
+category_5.save
 
 p 'sous categorie'
 

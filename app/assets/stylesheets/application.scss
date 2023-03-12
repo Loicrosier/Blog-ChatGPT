@@ -20,14 +20,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
 
- //
+ @import "font-awesome";
 
 
  body {
-   background-color: #22252a;
+  //  background-color: #76918B;
   // text-align: center;
-   margin: 0;
-   padding: 0;
+   margin: 0 !important;
+   padding: 0 !important;
  }
 
  h1 {

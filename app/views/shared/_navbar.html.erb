@@ -1,0 +1,30 @@
+<%# CATEGORIES INDEX %>
+
+<% if action_name == 'index' && controller_name == 'categories' %>
+  <div class="navbar" style="background-color: #353535">
+    <h1 id='blog-name'>TechStyleNews</h1>
+  </div>
+<% end %>
+
+<%# POSTS INDEX %>
+
+<% if action_name == 'index' && controller_name == 'posts' %>
+  <div class="navbar" style="background-color: #76918B">
+    <div class="headers flex">
+      <div class="back-btn flex">
+        <%= link_to root_path do %>
+          <% if controller_name == 'posts' && action_name == 'index'%>
+            <i id="back-btn-black" class="fa-solid fa-backward"></i>
+          <% else %>
+            <i id="back-btn" class="fa-solid fa-backward"></i>
+          <% end %>
+        <% end %>
+      </div>
+      <h1><%= @sous_category.name %></h1>
+      <div class="avatar-container flex">
+          <div class="avatar">
+          </div>
+      </div>
+    </div>
+  </div>
+<% end %>

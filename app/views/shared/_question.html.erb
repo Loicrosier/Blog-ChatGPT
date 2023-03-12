@@ -1,5 +1,7 @@
-    <% posts.each do |post| %>
-      <div class="question flex">
-        <%= link_to "#{post.name}", post_path(post.id) %>
-      </div>
-    <% end %>
+      <% posts.each do |post| %>
+        <%= link_to post_path(post.id) do %>
+          <div class="question-card flex">
+            <p><%= post.name %></p>
+          </div>
+        <% end %>
+      <% end %>

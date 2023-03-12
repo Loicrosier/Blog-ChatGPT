@@ -10,7 +10,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body style="<%= action_name == "index" && controller_name == 'posts' ? 'background-color: #353535;' : 'background-color: #76918B;'%>">
     <%= render 'shared/navbar' %>
     <%= yield %>
   </body>

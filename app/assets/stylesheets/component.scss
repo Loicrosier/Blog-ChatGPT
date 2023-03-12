@@ -1,9 +1,16 @@
 .container {
-  height: 1200px;
+  // height: 1200px;
 }
 
 .flex {
   display: flex;
+}
+
+.grid {
+  // justify-content: center;
+  // align-items: center;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
 .column {
@@ -16,7 +23,17 @@
 
 a {
   text-decoration: none !important;
+  color: #76918B;
+  font-family: 'Noto Sans', sans-serif;
 }
+
+h1 {
+  font-size: 56px !important;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: white;
+}
+
+
 
 // PUB
 .ads {
@@ -36,79 +53,79 @@ a {
   font-size: 24px;
 }
 
-// PARTIE CATEGORY
 
-#title-categories {
-  margin-top: 200px;
-  text-align: center;
-  font-family: 'Roboto Condensed', sans-serif !important;
-  font-size: 30px;
-  color: #545658;
-}
+// box de l'acceuil contient h2 categorie est div categ
 
-.cartes {
-  height: 200px;
-  padding: 10px;
-  // align-items: center;
-  // justify-content: center;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 10px;
-  background-color: #2c323b;
-
-}
-
-
-.carte {
-  background-color: aqua;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 20px;
-  margin: 0;
-  // height: 150px;
-}
-
-.carte-name {
-  text-align: center;
-
-  h2 {
-    color: rgb(9, 9, 9);
-    font-family: 'Nunito', sans-serif;
-
-  }
-}
-
-.carte-desc {
+.main-box {
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60%;
   height: 80%;
-  background-color: red;
-  gap: 5px;
-
+  border-radius: 12px;
+  align-items: center;
 }
 
-.link-sous-cat {
-  background-color: #2c323b;
-
-  a {
-    text-decoration: none !important;
-  }
-}
-
-/// PARTIE POST ///
-
-.questions {
-  background-color: red;
-  height: 800px;
-  width: 50%;
-  position: relative;
-  left: 25%;
+// contient les categories
+.categories {
+  padding: 20px;
+  // background-color: aliceblue;
+  width: 60%;
+  height: 80%;
   align-items: center;
   gap: 10px;
 }
 
-.question {
-  background-color: yellow;
-  width: 50%;
-  height: 60px;
+// h2 titre de la carte (categories)
+
+#name-card-acceuil {
+  font-family: 'Helvetica Neue', sans-serif;
+  padding-top: 20px;
+  font-size: 36px;
+  color: #d7e3e0;
+}
+////////////////////// CARTES ///////////////////////////////
+.category-card {
   justify-content: center;
   align-items: center;
+  height: 150px;
+  width: 600px;
+  border-radius: 12px;
+}
+
+.sub-category-card {
+  border-radius: 12px;
+  padding: 10px;
+  background-color: #353535;
+  font-size: 16px;
+}
+
+////////////////////// FIN CARTES ////////////////////////////
+
+// div qui apparait au hover de la carte qui contient les sous cate
+.lists-sub-cat {
+  padding: 5px;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #76918B;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.lists-sub-cat:hover {
+  opacity: 1;
+}
+////////////////////////////////////////////////
+
+// les nom des categories dans la carte
+.h2-category {
+  font-size: 50px;
+  font-weight: bold;
+  color: #353535;
 }

@@ -2,20 +2,22 @@ import Rails from "@rails/ujs";
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ["input", "container"]
+  static targets = ["input", "list"]
 
   connect() {
-    // this.outputTarget.textContent = 'Hello, Stimulus!'
-    console.log(this.inputTarget.value);
+    console.log('hello');
+    console.log(this.inputTarget);
+    console.log(this.listTarget);
   }
 
   test({params: { url }}) {
+
     Rails.ajax({
       url: `${url}?v=${this.inputTarget.value}`,
       type: 'GET',
-      datatype: 'JSON',
+      dataType: 'JSON',
       success: (data) => {
-        console.log(data.content);
+        console.log(data);
       }
     })
   }

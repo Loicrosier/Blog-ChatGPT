@@ -12,17 +12,22 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+// import fontawesome
+// import "@fortawesome/fontawesome-free/js/all";
+// import "@fortawesome/fontawesome-free/css/all.css";
+
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
 import "controllers"
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+import { textApparition } from '../controllers/text_apparition';
 
 document.addEventListener('turbolinks:load', () => {
 
-
+  textApparition()
   // Call your functions here, e.g:
 
 });

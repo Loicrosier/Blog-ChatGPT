@@ -1,0 +1,45 @@
+.navbar {
+position: fixed;
+height: 150px;
+width: 100%;
+text-align: center;
+}
+
+// div name & back button & logo if index posts
+.headers {
+  height: 100%;
+  justify-content: space-between;
+}
+
+// container bttn back
+.back-btn {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+
+  // le logo
+  #back-btn {
+    font-size: 50px;
+  }
+  // si button back sur nav blue
+  #back-btn-black {
+    color: #353535;
+    font-size: 50px;
+  }
+}
+
+
+.avatar-container {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 200px;
+}
+
+.avatar {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: red;
+}
