@@ -3,12 +3,10 @@
   style="background-image: url('https://res.cloudinary.com/dtv4zvyjx/image/upload/v1677895812/forum%20with%20ChatGPT/background-khaoticfuture_lxevnd.gif')"
   data-controller='search-question'>
     <%= form_with url: sous_categories_path(@sous_category.id), method: :get, id: 'search-question' do |form| %>
-      <%= form.text_field :v, data: { search_question_target: 'input', search_question_url_param: sous_categories_path(@sous_category.id), action: "keyup->search-question#test"} %>
+      <%= form.text_field :v, data: { search_question_target: 'input', search_question_url_param: sous_categories_path(@sous_category.id), action: "keyup->search-question#test"}, placeholder: "Chercher une question dans la liste", autocomplete: "off" %>
   <% end %>
 
-
-    <div class="questions flex column" data-search-question-target='list'>
       <%= render 'shared/question', posts: @posts %>
-    </div>
+
   </div>
 </div>

@@ -1,13 +1,8 @@
 import Rails from "@rails/ujs";
 import { Controller } from "stimulus"
-
 export default class extends Controller {
   static targets = ["input", "list"]
-
   connect() {
-    console.log('hello');
-    console.log(this.inputTarget);
-    console.log(this.listTarget);
   }
 
   test({params: { url }}) {
@@ -15,9 +10,13 @@ export default class extends Controller {
     Rails.ajax({
       url: `${url}?v=${this.inputTarget.value}`,
       type: 'GET',
-      dataType: 'JSON',
+      dataType: 'json',
+      contentType: 'application/json', // Ajout de l'option contentType,
+      accept: 'application/json',
       success: (data) => {
-        console.log(data);
+        let content = JSON.parse(data).content
+
+        this.listTarget.outerHTML = content
       }
     })
   }

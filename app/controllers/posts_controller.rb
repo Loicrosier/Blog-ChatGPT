@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html #
-      format.json { render json: success, status: 200 }
+      format.js { render json: success, status: 200 }
     end
 
   end

@@ -1,3 +1,5 @@
+
+    <div class="questions flex column ov" data-search-question-target='list'>
       <% posts.each do |post| %>
         <%= link_to post_path(post.id) do %>
           <div class="question-card flex">
@@ -5,3 +7,4 @@
           </div>
         <% end %>
       <% end %>
+    </div>

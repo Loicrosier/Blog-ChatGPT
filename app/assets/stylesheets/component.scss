@@ -33,24 +33,41 @@ h1 {
   color: white;
 }
 
+// ov = overflow
+
+.ov {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+
+  .strong-words {
+    font-weight: bold;
+    color: #76918B;
+  }
+
+
 
 
 // PUB
 .ads {
   display: flex;
   color: #CCCCCC;
-  height: 100px;
+  height: 300px;
   margin-bottom: 20px;
   text-align: center;
   justify-content: center;
   align-items: center;
   width: 100%;
+    background-image: url('fond_cosmique.gif');
 }
 
 .ads:before {
   content: 'Publicité AdSense';
   display: block;
   font-size: 24px;
+    height: 170px;
+  background-image: url('fond_cosmique.gif');
 }
 
 

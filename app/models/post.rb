@@ -22,7 +22,11 @@ class Post < ApplicationRecord
     paragraphes.map! { |paragraphe| paragraphe = "<p>#{paragraphe}</p>" }.shift
     taille = paragraphes.size
     pub = "<div class='ads' ></div>"
-    paragraphes.insert(0, pub) && paragraphes.insert((0 + taille) / 2, pub) && paragraphes.insert(taille - 1, pub)
+    if paragraphes.count > 1
+      paragraphes.insert(0, pub) && paragraphes.insert((0 + taille) / 2, pub) && paragraphes.insert(taille - 1, pub)
+    else
+      paragraphes.insert(0, pub)
+    end
 
 
     return paragraphes
@@ -55,16 +59,20 @@ class Post < ApplicationRecord
       liste_de_questions << [question_generer, mot[2]]
     end
 
-    puts liste_de_questions[0]
-
     liste_de_questions.each do |questions|
       id_of_sous_category = questions[1]
       questions[0].each do |question|
-        question_to_article = "Ecris un article pour répondre a cette question #{question} cette article dois remplir une page répond moi juste l'article sous forme de string"
+        question_to_article = "Ecris un article pour répondre a cette question #{question} cette article dois remplir une page répond moi juste l'article sous forme de string chaque phrases ou mots important de l'article dois etre englober dans une balise span avec la class 'strong-words' "
         content = get_openai_response(question_to_article, 1000)
-       p Post.create(name: question, content: content, question: question, sous_category_id: id_of_sous_category)
+        # check if article already exist if already do nothing
+        if Post.where(question: question).empty?
+         p Post.create(name: question, content: content, question: question, sous_category_id: id_of_sous_category)
+        end
       end
     end
+
+    # destroy article nil
+    Post.where(name: nil).each { |post| p "destroy #{post.destroy} " }
 
   end
 

@@ -24,10 +24,12 @@ ActiveStorage.start()
 import "controllers"
 // Internal imports, e.g:
 import { textApparition } from '../controllers/text_apparition';
+import { addPaddingScroll } from '../controllers/add_padding_scroll';
 
 document.addEventListener('turbolinks:load', () => {
 
-  textApparition()
   // Call your functions here, e.g:
+  textApparition()
+  addPaddingScroll()
 
 });
