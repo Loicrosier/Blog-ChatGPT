@@ -15,7 +15,6 @@ export default class extends Controller {
       accept: 'application/json',
       success: (data) => {
         let content = JSON.parse(data).content
-
         this.listTarget.outerHTML = content
       }
     })

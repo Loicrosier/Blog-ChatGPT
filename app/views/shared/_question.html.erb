@@ -1,10 +1,17 @@
 
-    <div class="questions flex column ov" data-search-question-target='list'>
-      <% posts.each do |post| %>
-        <%= link_to post_path(post.id) do %>
-          <div class="question-card flex">
-            <p><%= post.name %></p>
-          </div>
+    <% if !posts.empty? %>
+      <div class="questions flex column ov" data-search-question-target='list'>
+        <% posts.each do |post| %>
+          <%= link_to post_path(post.id) do %>
+            <div class="question-card flex">
+              <p><%= post.name_without_char %></p>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
+    <% else %>
+      <div class="questions nothing-found flex column" data-search-question-target='list'>
+        <h2>🤔</h2>
+        <h3>Aucune question ne correspond à votre recherche !</h3>
+      </div>
+    <% end %>

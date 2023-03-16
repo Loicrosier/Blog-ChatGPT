@@ -20,6 +20,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@900&display=swap');
 
  @import "font-awesome";
 
@@ -27,7 +28,6 @@
  body {
   //  background-color: #76918B;
   // text-align: center;
-    box-sizing: border-box;
    margin: 0 !important;
    padding: 0 !important;
  }
@@ -39,7 +39,7 @@
  }
 
     p {
-      color: #757575;
+      color: rgba(255, 255, 255, 0.882);
       line-height: 1.5;
       font-size: 18px;
       font-family: 'Noto Sans', sans-serif;

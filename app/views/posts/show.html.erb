@@ -2,7 +2,7 @@
 <div class="container flex">
 
   <div class="container-article">
-    <div id="title"><h1><%= "#{@post.name} ?" %></h1></div>
+    <div id="title"><h1><%= @post.name_without_char %></h1></div>
     <% @content.each do |paragraphe| %>
       <%= paragraphe.html_safe %>
     <% end %>

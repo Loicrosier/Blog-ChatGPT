@@ -1,10 +1,46 @@
+
+// .tst {
+//   background-color: #ffffff;
+//   width: 100px;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+.blog-name-container {
+  height: 100%;
+  width: 20%;
+}
+#blog-name {
+  text-align: center;
+}
+
+
+
 .navbar {
-z-index: 9999;
+z-index: 999;
 position: fixed;
 height: 150px;
 width: 100%;
-text-align: center;
+text-align: center !important;
+align-items: center !important;
+justify-content: center;
+
 }
+
+// .navbar-hidde-animation {
+//   opacity: 1;
+//   animation: hiddetoscroll 3s;
+// }
+
+// @keyframes hiddetoscroll {
+//   0% {
+//     opacity: 1;
+//   }
+
+//   100% {
+//     opacity: 0;
+//   }
+// }
 
 // div name & back button & logo if index posts
 .headers {
@@ -16,9 +52,9 @@ text-align: center;
 .back-btn {
   height: 100%;
   align-items: center;
-  justify-content: center;
-  width: 100px;
-
+  justify-content: left;
+  padding-left: 5px;
+  width: 20%;
   // le logo
   #back-btn {
     font-size: 50px;
@@ -35,17 +71,17 @@ text-align: center;
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 200px;
+  width: 20%;
 }
 
 .avatar {
   height: 100px;
   width: 100px;
   border-radius: 50%;
-  background-color: red;
 }
 
 .sous-cate-name {
-  position: relative;
-  left: 2%;
+  width: 20%;
+  align-items: center;
+  justify-content: center;
 }

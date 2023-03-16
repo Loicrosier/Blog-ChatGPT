@@ -1,12 +1,7 @@
 <%# CATEGORIES INDEX %>
 
-<% if action_name == 'index' && controller_name == 'categories' || action_name == 'show' && controller_name == 'posts' %>
-  <div class="navbar" style="background-color: #353535">
-    <% if action_name == 'show' %>
-      <%= link_to sous_categories_path(@post.sous_category.id) do %>
-        <i id="back-btn" class="fa-solid fa-backward"></i>
-      <% end %>
-    <% end %>
+<% if action_name == 'index' && controller_name == 'categories' %>
+  <div class="navbar flex" style="background-color: #353535">
     <h1 id='blog-name'>TechStyleNews</h1>
   </div>
 <% end %>
@@ -25,7 +20,7 @@
           <% end %>
         <% end %>
       </div>
-      <div class="sous-cate-name"><h1><%= @sous_category.name %></h1></div>
+      <div class="sous-cate-name flex"><h1><%= @sous_category.name %></h1></div>
       <div class="avatar-container flex">
           <div class="avatar">
           </div>
@@ -33,3 +28,16 @@
     </div>
   </div>
 <% end %>
+
+    <% if action_name == 'show' && controller_name == 'posts' %>
+      <div class="navbar flex inline space-between" style="background-color: #353535">
+        <%= link_to sous_categories_path(@post.sous_category.id), class: 'flex back-btn' do %>
+          <i id="back-btn" class="fa-solid fa-backward"></i>
+        <% end %>
+        <div class='blog-name-container flex'><h1 id='blog-name'>TechStyleNews</h1></div>
+          <div class="avatar-container flex">
+            <div class="avatar">
+            </div>
+          </div>
+      </div>
+    <% end %>

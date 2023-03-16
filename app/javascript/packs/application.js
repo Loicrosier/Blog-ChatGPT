@@ -25,11 +25,13 @@ import "controllers"
 // Internal imports, e.g:
 import { textApparition } from '../controllers/text_apparition';
 import { addPaddingScroll } from '../controllers/add_padding_scroll';
+import { navHideToScroll } from "../controllers/navbar_hide_to_scroll"
 
 document.addEventListener('turbolinks:load', () => {
 
   // Call your functions here, e.g:
   textApparition()
-  addPaddingScroll()
+  // addPaddingScroll()
+  navHideToScroll()
 
 });

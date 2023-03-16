@@ -26,6 +26,7 @@ class RateLimitedClient
       }.to_json
 
       http = Net::HTTP.new(uri.hostname, uri.port)
+      http.read_timeout = 60
       http.use_ssl = true
       response = http.request(req)
 

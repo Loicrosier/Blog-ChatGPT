@@ -1,22 +1,37 @@
-::-webkit-scrollbar {
-  width: 1em;
-}
 
-::-webkit-scrollbar-track {
-  margin-block: 5px;
-  border-radius: 100vh !important;
-  background-color: rgba(245, 245, 245, 0.047);
-}
+    ::-webkit-scrollbar {
+      width: 1em;
+    }
 
-::-webkit-scrollbar-thumb {
-  border-radius: 100vh;
-  background-color: rgba(3, 80, 235, 0.534);
-}
+    .questions::-webkit-scrollbar-track {
+      margin-block: 5px;
+      border-radius: 100vh !important;
+      background-color: rgba(245, 245, 245, 0.047);
+    }
 
-::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(56, 56, 56, 0.65);
-}
+    .questions::-webkit-scrollbar-thumb {
+      border-radius: 100vh;
+      background-color: rgba(0, 0, 0, 0.534);
+    }
 
-.hidden-scroll-bars::-webkit-scrollbar {
-  display: none
-}
+    .questions::-webkit-scrollbar-thumb:hover {
+      background-color: #76918bc5;
+    }
+
+    .hidden-scroll-bars::-webkit-scrollbar {
+      display: none
+    }
+
+    // navbar general rules
+
+    ::-webkit-scrollbar-track {
+      background-color: #353535;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #353535;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #76918B;
+    }
